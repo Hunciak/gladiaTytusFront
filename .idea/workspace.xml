@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bef8274-a0ed-4f9a-852c-019d8d1f1125" name="Changes" comment="Adding Header and Navbar to the project.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="5bef8274-a0ed-4f9a-852c-019d8d1f1125" name="Changes" comment="Adding SignIn form." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,7 +62,7 @@
       <updated>1678402841215</updated>
       <workItem from="1678402842347" duration="73000" />
       <workItem from="1678627773323" duration="42000" />
-      <workItem from="1678825742537" duration="7590000" />
+      <workItem from="1678825742537" duration="8160000" />
     </task>
     <task id="LOCAL-00001" summary="Adding Header and Navbar to the project.">
       <created>1678402900094</created>
@@ -75,7 +71,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678402900094</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adding SignIn form.">
+      <created>1678834235019</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678834235019</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,6 +97,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adding Header and Navbar to the project." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Header and Navbar to the project." />
+    <MESSAGE value="Adding SignIn form." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding SignIn form." />
   </component>
 </project>
