@@ -33,7 +33,7 @@ export const SignUp = () => {
         }
 
         try{
-            const res = await fetch(`http://localhost:3001/user`, {
+            const res = await fetch(`http://localhost:3001/signup`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -42,6 +42,7 @@ export const SignUp = () => {
             })
 
             const data = await res.json();
+            console.log(data)
             setId(data.id)
 
         } catch (error) {
