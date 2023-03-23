@@ -4,7 +4,7 @@ import {Btn} from "../common/Btn";
 
 export const SignIn = () => {
     const [loading, setLoading] = useState(false);
-    const [success, setSuccess] = useState(false);
+    const [signedIn, setSignedIn] = useState(false);
     const [form, setForm] = useState({
         email: '',
         password: '',
@@ -15,7 +15,6 @@ export const SignIn = () => {
         e.preventDefault();
 
         setLoading(true);
-
         try{
             const res = await fetch(`http://localhost:3001/signin`, {
                 method: 'POST',
@@ -24,15 +23,39 @@ export const SignIn = () => {
                 },
                 body: JSON.stringify(form)
             })
-            const data = await res.json();
-            setSuccess(data)
+            const verified = await res.json();
+
         } catch (error) {
+
             console.log('jebany blad',error)
         }
         finally {
             setLoading(false);
+
+        }
+
+        if (signedIn) {
+            setLoading(true)
+            try {
+                const res = await  fetch(`http://localhost:3001/app/:user`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(form)
+                })
+                const verified = await res.json();
+
+            } catch (error) {
+                console.log('błąd w pobieraniu danych', error)
+            } finally {
+                setLoading(false)
+            }
+
         }
     };
+
+
 
     const updateForm = (key: string, value: any) => {
         setForm(form => ({
@@ -45,7 +68,7 @@ export const SignIn = () => {
         return <h2>Trwa logowanie. </h2>
     }
 
-    if (success) {
+    if (signedIn) {
         return <h2>Pomyślnie zalogowano.</h2>
     }
 

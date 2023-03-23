@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bef8274-a0ed-4f9a-852c-019d8d1f1125" name="Changes" comment="Adding loading screen and response from be.">
+    <list default="true" id="5bef8274-a0ed-4f9a-852c-019d8d1f1125" name="Changes" comment="Adding singin function and response from be.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SignIn/SignIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignIn/SignIn.tsx" afterDir="false" />
@@ -72,7 +72,12 @@
       <workItem from="1678987740177" duration="8617000" />
       <workItem from="1679170804439" duration="7814000" />
       <workItem from="1679213572352" duration="15256000" />
-      <workItem from="1679303915134" duration="1314000" />
+      <workItem from="1679303915134" duration="2445000" />
+      <workItem from="1679347482659" duration="397000" />
+      <workItem from="1679390044490" duration="8829000" />
+      <workItem from="1679473220925" duration="3770000" />
+      <workItem from="1679556839178" duration="7600000" />
+      <workItem from="1679606665517" duration="4284000" />
     </task>
     <task id="LOCAL-00001" summary="Adding Header and Navbar to the project.">
       <created>1678402900094</created>
@@ -109,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679226355054</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Adding singin function and response from be.">
+      <created>1679308825580</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679308825580</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +144,7 @@
     <MESSAGE value="Sending SignUp form into be into database." />
     <MESSAGE value="Adding button." />
     <MESSAGE value="Adding loading screen and response from be." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding loading screen and response from be." />
+    <MESSAGE value="Adding singin function and response from be." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding singin function and response from be." />
   </component>
 </project>
