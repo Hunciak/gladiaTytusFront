@@ -129,7 +129,7 @@ export const SignUp = () => {
             <Btn text={'Zarejstruj'}/>
 
         </form>
-            <GetOneUser id={'75e67c03-134d-469d-863e-9f94dcf3b8a3'}/>
+
         </div>
 
     )

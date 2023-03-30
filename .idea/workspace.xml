@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bef8274-a0ed-4f9a-852c-019d8d1f1125" name="Changes" comment="Adding singin function and response from be.">
+    <list default="true" id="5bef8274-a0ed-4f9a-852c-019d8d1f1125" name="Changes" comment="Adding GetOneUser (undone).">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GetOneUser/GetOneUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetOneUser/GetOneUser.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SignIn/SignIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignIn/SignIn.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUp.tsx" afterDir="false" />
     </list>
@@ -33,6 +33,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Michał/WebstormProjects/gladiaTytus/gladia-tytus-back&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -41,7 +42,7 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="start" type="js.build_tools.npm" activateToolWindowBeforeRun="false" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -77,7 +78,17 @@
       <workItem from="1679390044490" duration="8829000" />
       <workItem from="1679473220925" duration="3770000" />
       <workItem from="1679556839178" duration="7600000" />
-      <workItem from="1679606665517" duration="4284000" />
+      <workItem from="1679606665517" duration="4942000" />
+      <workItem from="1679648789544" duration="3172000" />
+      <workItem from="1679733213709" duration="797000" />
+      <workItem from="1679744006746" duration="2507000" />
+      <workItem from="1679778833630" duration="594000" />
+      <workItem from="1679840066058" duration="1344000" />
+      <workItem from="1679930276240" duration="14118000" />
+      <workItem from="1680026558864" duration="5488000" />
+      <workItem from="1680107880418" duration="5005000" />
+      <workItem from="1680114381842" duration="7734000" />
+      <workItem from="1680190752578" duration="947000" />
     </task>
     <task id="LOCAL-00001" summary="Adding Header and Navbar to the project.">
       <created>1678402900094</created>
@@ -121,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679308825580</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Adding GetOneUser (undone).">
+      <created>1679611248496</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679611248496</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +163,7 @@
     <MESSAGE value="Adding button." />
     <MESSAGE value="Adding loading screen and response from be." />
     <MESSAGE value="Adding singin function and response from be." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding singin function and response from be." />
+    <MESSAGE value="Adding GetOneUser (undone)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding GetOneUser (undone)." />
   </component>
 </project>
