@@ -1,4 +1,4 @@
-import {SyntheticEvent, useState} from "react";
+import {SyntheticEvent, useEffect, useState} from "react";
 import {Btn} from "../common/Btn";
 
 
@@ -23,6 +23,16 @@ export const GetOneUser = (props: Props) => {
         charisma: 0,
         PLN: 0,
     });
+    const [equipment, setEquipment] = useState({
+        chest: '',
+        helmet: '',
+        gloves: '',
+        shoes: '',
+        ring: '',
+        necklace: '',
+        erring: '',
+        weapon: '',
+    })
 
     const viewUser = (async (e: SyntheticEvent) => {
 
@@ -38,17 +48,56 @@ export const GetOneUser = (props: Props) => {
                 ...stats,
                 ...userStats,
             }))
-            console.log('staty:', stats)
+
         } catch (error) {
 
             console.log('błąd w pobieraniu danych użytkownika', error)
 
-        }finally {
+        } finally {
             setLoading(false)
-            console.log()
-        }
-    })
 
+        }
+    });
+
+    useEffect(() => {
+
+        try {
+            (async () => {
+                const res = await fetch(`http://localhost:3001/app/user/eq/${props.signIn}`)
+                const usersEquipment = await res.json();
+                console.log(usersEquipment)
+                setEquipment(equipment => ({
+                    ...equipment,
+                    ...usersEquipment,
+                }))
+            })()
+        } catch(error) {
+            console.log('błąd w pobieraniu ekwipunku', error)
+        }
+    },[])
+
+    const usersEquipment = (async (e:SyntheticEvent) => {
+
+        e.preventDefault();
+        setLoading(true)
+
+        try {
+            console.log('pobieram dane do eq')
+            const res = await fetch(`http://localhost:3001/app/user/eq`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(equipment)
+            });
+
+        } catch (error) {
+            console.log('błąd w aktualizacji ekwipunku', error)
+        } finally {
+            setLoading(false)
+        }
+
+    });
 
     return (
         <div>
@@ -67,10 +116,55 @@ export const GetOneUser = (props: Props) => {
                         <li>Charyzma: {stats.charisma}</li>
                         <li>PLN: {stats.PLN}</li>
                     </ul>
-
             <Btn text={'Odśwież dane'}/>
             </form>
+
+            {/*<h1>Twój ekwipunek</h1>*/}
+            {/*<p>*/}
+            {/*    <form action="">*/}
+            {/*    <select value={equipment.chest} onSubmit={usersEquipment} defaultValue='none'>*/}
+            {/*        {*/}
+            {/*            'cipa'*/}
+            {/*        }*/}
+            {/*    </select>*/}
+            {/*    <select value={equipment.chest} onSubmit={usersEquipment} defaultValue='none'>*/}
+            {/*        {*/}
+            {/*            'cipa'*/}
+            {/*        }*/}
+            {/*    </select>*/}
+            {/*    <select value={equipment.chest} onSubmit={usersEquipment} defaultValue='none'>*/}
+            {/*        {*/}
+            {/*            'cipa'*/}
+            {/*        }*/}
+            {/*    </select>*/}
+            {/*    <select value={equipment.chest} onSubmit={usersEquipment} defaultValue='none'>*/}
+            {/*        {*/}
+            {/*            'cipa'*/}
+            {/*        }*/}
+            {/*    </select>*/}
+            {/*    <select value={equipment.chest} onSubmit={usersEquipment} defaultValue='none'>*/}
+            {/*        {*/}
+            {/*            'cipa'*/}
+            {/*        }*/}
+            {/*    </select>*/}
+            {/*    <select value={equipment.chest} onSubmit={usersEquipment} defaultValue='none'>*/}
+            {/*        {*/}
+            {/*            'cipa'*/}
+            {/*        }*/}
+            {/*    </select>*/}
+            {/*    <select value={equipment.chest} onSubmit={usersEquipment} defaultValue='none'>*/}
+            {/*        {*/}
+            {/*            'cipa'*/}
+            {/*        }*/}
+            {/*    </select>*/}
+            {/*    <select value={equipment.chest} onSubmit={usersEquipment} defaultValue='none'>*/}
+            {/*        {*/}
+            {/*            'cipa'*/}
+            {/*        }*/}
+            {/*    </select>*/}
+            {/*    <Btn text={'Zapisz ekwipunek'}/>*/}
+            {/*    </form>*/}
+            {/*</p>*/}
         </div>
     )
-
 }
