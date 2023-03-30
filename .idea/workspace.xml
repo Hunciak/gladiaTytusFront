@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bef8274-a0ed-4f9a-852c-019d8d1f1125" name="Changes" comment="Adding GetOneUser (undone).">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GetOneUser/GetOneUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetOneUser/GetOneUser.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignIn/SignIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignIn/SignIn.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUp.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="5bef8274-a0ed-4f9a-852c-019d8d1f1125" name="Changes" comment="Adding GetOneOpponent." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +83,7 @@
       <workItem from="1680026558864" duration="5488000" />
       <workItem from="1680107880418" duration="5005000" />
       <workItem from="1680114381842" duration="7734000" />
-      <workItem from="1680190752578" duration="947000" />
+      <workItem from="1680190752578" duration="1301000" />
     </task>
     <task id="LOCAL-00001" summary="Adding Header and Navbar to the project.">
       <created>1678402900094</created>
@@ -139,7 +134,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679611248496</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Adding GetOneUser.">
+      <created>1680191725072</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680191725072</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Adding GetOneOpponent.">
+      <created>1680191740821</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1680191740821</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +173,8 @@
     <MESSAGE value="Adding loading screen and response from be." />
     <MESSAGE value="Adding singin function and response from be." />
     <MESSAGE value="Adding GetOneUser (undone)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding GetOneUser (undone)." />
+    <MESSAGE value="Adding GetOneUser." />
+    <MESSAGE value="Adding GetOneOpponent." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding GetOneOpponent." />
   </component>
 </project>
