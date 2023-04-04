@@ -1,7 +1,9 @@
 import React, {SyntheticEvent, useEffect, useState} from "react";
 import {Btn} from "../common/Btn";
 import {GetOneUser} from "../GetOneUser/GetOneUser";
-import {GetOneOpponent} from "../GetOneOpponent/GetOneOpponent";
+import {GetAllOpponents} from "../GetAllOpponents/GetAllOpponents";
+import {SignInBar} from "../layout/SignInBar";
+
 
 
 
@@ -13,10 +15,12 @@ export const SignIn = () => {
         password: '',
     });
 
+
     const signIn = async (e: SyntheticEvent) => {
         e.preventDefault();
 
         setLoading(true);
+
         try{
             const res = await fetch(`http://localhost:3001/signin`, {
                 method: 'POST',
@@ -26,19 +30,16 @@ export const SignIn = () => {
                 body: JSON.stringify(form)
             })
             const getId = await res.json();
-            console.log(getId.signIn)
             setId(getId.signIn);
 
-
         } catch (error) {
-
             console.log('jebany blad',error)
         }
         finally {
             setLoading(false);
-
         }
     };
+
     const updateForm = (key: string, value: any) => {
         setForm(form => ({
             ...form,
@@ -47,16 +48,16 @@ export const SignIn = () => {
     };
 
     if (loading) {
-        return <h2>Trwa logowanie. </h2>
+        return <div>Trwa logowanie. </div>
     }
 
-
     if (id) {
+
         return (
             <div>
         <h2>Pomyślnie zalogowano.</h2>
-                <GetOneUser signIn={id}/>
-                <GetOneOpponent opponentId='abc'/>
+                <SignInBar id={id}/>
+
             </div>
         )}
 

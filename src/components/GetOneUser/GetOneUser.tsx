@@ -23,24 +23,25 @@ export const GetOneUser = (props: Props) => {
         charisma: 0,
         PLN: 0,
     });
-    const [equipment, setEquipment] = useState({
-        chest: '',
-        helmet: '',
-        gloves: '',
-        shoes: '',
-        ring: '',
-        necklace: '',
-        erring: '',
-        weapon: '',
-    })
+    const [equipment, setEquipment] = useState([{
+        name: '',
+        type: '',
+        tier: 0,
+        stats_attack: 0,
+        stats_defence: 0,
+        stats_strength: 0,
+        stats_stamina: 0,
+        stats_dexterity: 0,
+        stats_charisma: 0,
+    }])
 
-    const viewUser = (async (e: SyntheticEvent) => {
 
-        e.preventDefault();
+    useEffect(() => {
         setLoading(true)
 
         try {
 
+            (async () => {
             const res = await fetch (`http://localhost:3001/app/user/${props.signIn}`)
             const userStats = await res.json();
             console.log(userStats)
@@ -48,6 +49,7 @@ export const GetOneUser = (props: Props) => {
                 ...stats,
                 ...userStats,
             }))
+            })()
 
         } catch (error) {
 
@@ -57,7 +59,7 @@ export const GetOneUser = (props: Props) => {
             setLoading(false)
 
         }
-    });
+    },[]);
 
     useEffect(() => {
 
@@ -65,7 +67,7 @@ export const GetOneUser = (props: Props) => {
             (async () => {
                 const res = await fetch(`http://localhost:3001/app/user/eq/${props.signIn}`)
                 const usersEquipment = await res.json();
-                console.log(usersEquipment)
+                console.log('itemsy uzytkownika:',usersEquipment)
                 setEquipment(equipment => ({
                     ...equipment,
                     ...usersEquipment,
@@ -101,7 +103,7 @@ export const GetOneUser = (props: Props) => {
 
     return (
         <div>
-            <form action="" onSubmit={viewUser}>
+
             <h1>Twoje statystyki</h1>
                     <ul>
                         <li>Nazwa: {stats.name}</li>
@@ -116,13 +118,13 @@ export const GetOneUser = (props: Props) => {
                         <li>Charyzma: {stats.charisma}</li>
                         <li>PLN: {stats.PLN}</li>
                     </ul>
-            <Btn text={'Odśwież dane'}/>
-            </form>
+
+
 
             {/*<h1>Twój ekwipunek</h1>*/}
             {/*<p>*/}
             {/*    <form action="">*/}
-            {/*    <select value={equipment.chest} onSubmit={usersEquipment} defaultValue='none'>*/}
+            {/*    <select value={equipment} onSubmit={usersEquipment} defaultValue='none'>*/}
             {/*        {*/}
             {/*            'cipa'*/}
             {/*        }*/}

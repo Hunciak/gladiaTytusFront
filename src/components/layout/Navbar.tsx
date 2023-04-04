@@ -2,6 +2,11 @@ import React from "react";
 import { NavLink, Route, Routes} from "react-router-dom";
 import "./Navbar.css";
 import {Header} from "./Header";
+import {SignIn} from "../SignIn/SignIn";
+import {SignUp} from "../SignUp/SignUp";
+import {GetOneUser} from "../GetOneUser/GetOneUser";
+import {GetAllOpponents} from "../GetAllOpponents/GetAllOpponents";
+import {SignInBar} from "./SignInBar";
 
 
 
@@ -13,10 +18,13 @@ export const Navbar = () => {
                 <h1>Navbar</h1>
                 <ul>
                     <li>
-                        <NavLink to='/'>Home</NavLink>
+                        <NavLink to='/home'>Strona głowna</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/about'>Zaloguj się</NavLink>
+                        <NavLink to='/signin/*'>Zaloguj się</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/signup'>Rejstracja</NavLink>
                     </li>
                     <li>
                         <NavLink to='/gallery'>O grze</NavLink>
@@ -28,14 +36,13 @@ export const Navbar = () => {
             </div>
         </>
     )
-
     return (
         <h1>
             {navBar}
             <Routes>
                 <Route path='/home' element={<Header/>}/>
-                <Route path='/signIn' element={<Header/>}/>
-                <Route path='/about' element={<Header/>}/>
+                <Route path='/signin/*' element={<SignIn/>}/>
+                <Route path='/signup' element={<SignUp/>}/>
                 <Route path='/contact' element={<Header/>}/>
             </Routes>
 

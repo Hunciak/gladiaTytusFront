@@ -2,15 +2,17 @@ import React from 'react';
 import './App.css';
 import {SignIn} from "./components/SignIn/SignIn";
 import { SignUp } from './components/SignUp/SignUp';
-import {GetOneUser} from "./components/GetOneUser/GetOneUser";
+import {Navbar} from "./components/layout/Navbar";
+import {Header} from "./components/layout/Header";
+
 
 const App = () => {
 
 
   return (
       <div>
-        {SignIn()}
-          {SignUp()}
+          <Header/>
+          {Navbar()}
       </div>
   )
 }
