@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import {NavLink, Route, Routes} from "react-router-dom";
 import {GetOneUser} from "../GetOneUser/GetOneUser";
 import {GetAllOpponents} from "../GetAllOpponents/GetAllOpponents";
+import {GetUserEq} from "../GetUserEq/GetUserEq";
+import {AddStatistics} from "../AddStatistics/AddStatistics";
 
 
 interface Props {
@@ -9,7 +11,6 @@ interface Props {
 }
 
 export const SignInBar = (props: Props) => {
-
     const signInBar = (
         <div>
             <ul>
@@ -23,7 +24,7 @@ export const SignInBar = (props: Props) => {
                     <NavLink to='/signin/stats'>Dodaj statystyki</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/signin/shop'>Kup ekwipunek</NavLink>
+                    <NavLink to='/signin/eq'>Pokaz ekwipunek</NavLink>
                 </li>
             </ul>
         </div>
@@ -34,8 +35,8 @@ export const SignInBar = (props: Props) => {
             <Routes>
                 <Route path='/user' element={GetOneUser(props.id)}></Route>
                 <Route path='/fight' element={GetAllOpponents()}></Route>
-                <Route path='/stats' element={GetOneUser(props.id)}></Route>
-                <Route path='/shop' element={GetOneUser(props.id)}></Route>
+                <Route path='/stats' element={AddStatistics(props.id)}></Route>
+                <Route path='/eq' element={GetUserEq(props.id)}></Route>
             </Routes>
         </h3>
     )

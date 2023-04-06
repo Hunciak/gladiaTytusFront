@@ -31,10 +31,9 @@ export const GetAllOpponents = () => {
     const onChangeOpp = (e: any): any => {
         const selectedOpp = e.target.value;
         console.log('target vlaue', selectedOpp)
-        const selectedshit = allOpponents.filter((opp) => opp.name == selectedOpp)[0];
-        setChosenOpponent(selectedshit)
+        const selectedValue = allOpponents.filter((opp) => opp.name == selectedOpp)[0];
+        setChosenOpponent(selectedValue)
     }
-    console.log(allOpponents)
 
     return <>
         <div>
