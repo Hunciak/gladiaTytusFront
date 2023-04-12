@@ -1,7 +1,6 @@
-import React, {SyntheticEvent, useEffect, useState} from "react";
+import React, {SyntheticEvent, useState} from "react";
+import {UserDataType } from "types";
 import {Btn} from "../common/Btn";
-import {GetOneUser} from "../GetOneUser/GetOneUser";
-import {GetAllOpponents} from "../GetAllOpponents/GetAllOpponents";
 import {SignInBar} from "../layout/SignInBar";
 
 
@@ -10,7 +9,7 @@ import {SignInBar} from "../layout/SignInBar";
 export const SignIn = () => {
     const [loading, setLoading] = useState(false);
     const [id, setId] = useState('');
-    const [form, setForm] = useState({
+    const [form, setForm] = useState<UserDataType>({
         email: '',
         password: '',
     });
@@ -33,7 +32,7 @@ export const SignIn = () => {
             setId(getId.signIn);
 
         } catch (error) {
-            console.log('jebany blad',error)
+            console.log('Błąd podczas logowania',error)
         }
         finally {
             setLoading(false);

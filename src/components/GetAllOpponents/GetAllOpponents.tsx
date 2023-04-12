@@ -1,42 +1,57 @@
 import React, {SyntheticEvent, useEffect, useState} from "react";
+import { AllOppType, UserOppIdType } from "types";
+import {GetOneOpponent} from "../GetOneOpponent/GetOneOpponent";
 
+interface Props {
+    id: string;
+}
 
+export const GetAllOpponents = (props: string) => {
 
-
-
-export const GetAllOpponents = () => {
+    const [getOneFlag, setGetOneFlag] = useState(false)
     const [chosenOpponent, setChosenOpponent] = useState({
         name: '',
         id: 0,
     });
+    const propOneOpp:UserOppIdType = {
+        id: props,
+        opponentId: chosenOpponent.id,
+    }
 
-    const [allOpponents, setAllOpponents] = useState<{id: number, name: string}[]>([])
+    const [allOpponents, setAllOpponents] = useState<AllOppType[]>([{
+        id: 0,
+        name: '',
+    }])
     useEffect(() => {
 
         try {
             (async () => {
                const res = await fetch(`http://localhost:3001/app/allopp`);
                const allOpp = await res.json();
-
                 setAllOpponents(allOpp);
             })()
 
         } catch (error) {
             console.log('bład podczas pobierania wszystkich przeciwników', error)
-        } finally {
-            allOpponents.map(x => console.log('ten syf',x.name))
         }
     }, [])
 
-    const onChangeOpp = (e: any): any => {
+    const setFlag = (e:SyntheticEvent) => {
+        e.preventDefault()
+        setGetOneFlag(true);
+    }
+
+
+
+    const onChangeOpp = (e: any): void => {
         const selectedOpp = e.target.value;
-        console.log('target vlaue', selectedOpp)
         const selectedValue = allOpponents.filter((opp) => opp.name == selectedOpp)[0];
         setChosenOpponent(selectedValue)
     }
 
     return <>
         <div>
+            <p>Wybierz przeciwnika!</p>
             <select className='custom-select' value={chosenOpponent.name} onChange={onChangeOpp}>
                 {
                     allOpponents.map(opp => (
@@ -44,11 +59,8 @@ export const GetAllOpponents = () => {
                     ))
                 }
             </select>
-            <form action="">
-
-            </form>
-
-
+            <button type='button' onClick={setFlag}>Wybierz</button>
+            {(getOneFlag && propOneOpp.id) && <GetOneOpponent id={propOneOpp.id} opponentId={propOneOpp.opponentId}/>}
         </div>
     </>
 }

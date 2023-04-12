@@ -6,6 +6,7 @@ import {GetUserEq} from "../GetUserEq/GetUserEq";
 import {AddStatistics} from "../AddStatistics/AddStatistics";
 
 
+
 interface Props {
     id: any;
 }
@@ -34,7 +35,7 @@ export const SignInBar = (props: Props) => {
             {signInBar}
             <Routes>
                 <Route path='/user' element={GetOneUser(props.id)}></Route>
-                <Route path='/fight' element={GetAllOpponents()}></Route>
+                <Route path='/fight' element={GetAllOpponents(props.id)}></Route>
                 <Route path='/stats' element={AddStatistics(props.id)}></Route>
                 <Route path='/eq' element={GetUserEq(props.id)}></Route>
             </Routes>

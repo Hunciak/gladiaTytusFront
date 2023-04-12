@@ -1,4 +1,5 @@
 import React, {SyntheticEvent, useState} from "react";
+import { UserDataType } from "types";
 import {Btn} from "../common/Btn";
 
 
@@ -8,7 +9,7 @@ export const SignUp = () => {
 
         const [id, setId] = useState('');
         const [loading, setLoading] = useState(false);
-        const [form, setForm] = useState({
+        const [form, setForm] = useState<UserDataType>({
             email: '',
             name: '',
             password: '',
@@ -54,7 +55,7 @@ export const SignUp = () => {
         }
     }
 
-    const updateForm = (key: string, value: any) => {
+    const updateForm = (key: string, value: string) => {
         setForm(form => ({
             ...form,
             [key]: value,
@@ -66,11 +67,11 @@ export const SignUp = () => {
     };
 
     if (loading) {
-        return <h2>Trwa rejestracja. </h2>
+        return <p>Trwa rejestracja. </p>
     }
 
     if (id) {
-        return <h2>Pomyślnie zarejestrowano.</h2>
+        return <p>Pomyślnie zarejestrowano.</p>
     }
 
     return (

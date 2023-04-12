@@ -1,5 +1,6 @@
-import {SyntheticEvent, useEffect, useState} from "react";
-import {Btn} from "../common/Btn";
+import { useEffect, useState} from "react";
+import { AddStatsType } from "types";
+
 
 
 
@@ -9,7 +10,7 @@ interface Props {
 
 export const GetOneUser = (props: Props) => {
     const [loading, setLoading] = useState(false)
-    const [stats, setStats] = useState({
+    const [stats, setStats] = useState<AddStatsType>({
         name: '',
         level: 0,
         experience: 0,

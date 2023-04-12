@@ -1,4 +1,5 @@
 import React, {SyntheticEvent, useEffect, useState} from "react";
+import { AllEquipment } from "types";
 import {Btn} from "../common/Btn";
 
 
@@ -8,7 +9,7 @@ interface Props {
 
 export const GetUserEq = (props: Props) => {
 
-    const [chosenEquipment, setChosenEquipment] = useState({
+    const [chosenEquipment, setChosenEquipment] = useState<AllEquipment>({
         name: '',
         type: '',
         tier: 0,
@@ -20,7 +21,7 @@ export const GetUserEq = (props: Props) => {
         stats_charisma: 0,
     })
 
-    const [equipment, setEquipment] = useState([{
+    const [equipment, setEquipment] = useState<AllEquipment[]>([{
         name: '',
         type: '',
         tier: 0,
@@ -44,9 +45,9 @@ export const GetUserEq = (props: Props) => {
         }
     },[])
 
-    const usersEquipment = (async (e:SyntheticEvent) => {
-
+    const usersEquipment = async (e:SyntheticEvent) => {
         e.preventDefault();
+
         try {
             console.log('pobieram dane do eq')
             const res = await fetch(`http://localhost:3001/app/user/eq`, {
@@ -57,24 +58,25 @@ export const GetUserEq = (props: Props) => {
                 body: JSON.stringify(equipment)
             });
 
+
         } catch (error) {
             console.log('błąd w aktualizacji ekwipunku', error)
         }
-    });
+    };
 
     const onChangeEq = (e: any): any => {
         const selectedEq = e.target.value;
         const selectedValue = equipment.filter((opp) => opp.name == selectedEq)[0];
         setChosenEquipment(selectedValue)
-        console.log(chosenEquipment)
+
     }
 
     return  <div>
         <h1>Twój ekwipunek</h1>
-            <form action="" >
+            <form action="" onSubmit={usersEquipment} >
                 <ul>
                     <li>Pancerz:
-                        <select defaultValue='brak' className='custom-select' value='armor' onChange={onChangeEq}>
+                        <select  className='custom-select' value='armor' onChange={onChangeEq}>
                             {
                                 equipment.filter((eq) => {
                                     return eq.type === 'armor';
@@ -83,6 +85,7 @@ export const GetUserEq = (props: Props) => {
                                     <option key={eq.name} value={eq.name}>{eq.name}</option>
                                 ))
                             }
+
                         </select>
                     </li>
 
@@ -193,6 +196,4 @@ export const GetUserEq = (props: Props) => {
             <Btn text={'Zapisz ekwipunek'}/>
             </form>
     </div>
-
-
 }

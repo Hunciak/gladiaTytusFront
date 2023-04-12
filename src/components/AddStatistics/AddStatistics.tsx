@@ -1,12 +1,13 @@
 import React, {SyntheticEvent, useEffect, useState} from "react";
-import {Btn} from "../common/Btn";
+import { AddStatsType, AddStatsValidationType } from "types";
+
 
 
 export const AddStatistics = (props: string) => {
 
     const [notEnoughGold, setNotEnoughGold] = useState(false)
 
-    const [stats, setStats] = useState({
+    const [stats, setStats] = useState<AddStatsType>({
         name: '',
         level: 0,
         experience: 0,
@@ -39,7 +40,7 @@ export const AddStatistics = (props: string) => {
 
     const sendStats = async (e: SyntheticEvent) => {
         e.preventDefault();
-        const modifiedStats = {
+        const modifiedStats: AddStatsValidationType = {
             id: props,
             strength: stats.strength,
             dexterity: stats.dexterity,
@@ -80,26 +81,26 @@ export const AddStatistics = (props: string) => {
         <h1>Dodaj statystyki</h1>
         <ul>
             <form onClick={(e) => addStat('strength')}>
-                <li>Siła: {stats.strength}</li>
+                <li>Pakuj siłę: {stats.strength}</li>
                 <button type='button'>Dodaj</button>
             </form>
 
             <form onClick={(e) => addStat('dexterity')}>
-                <li>Zręczność: {stats.dexterity}</li>
+                <li>Pakuj zręczność: {stats.dexterity}</li>
                 <button type='button'>Dodaj</button>
             </form>
 
             <form onClick={(e) => addStat('stamina')}>
-                <li>Wytrzymałość: {stats.stamina}</li>
+                <li>Pakuj wytrzymałość: {stats.stamina}</li>
                 <button type='button'>Dodaj</button>
             </form>
 
             <form onClick={(e) => addStat('charisma')}>
-                <li>Charyzma: {stats.charisma}</li>
+                <li>Pakuj jak do japy (charyzma): {stats.charisma}</li>
                 <button type='button'>Dodaj</button>
             </form>
             <li>PLN: {stats.PLN}</li>
-            {!notEnoughGold ? (<h2>Nie masz wystarczającej ilości PLN</h2>) : (<h2>Pakuj</h2>)}
+            {notEnoughGold ? (<h2>Nie masz wystarczającej ilości PLN</h2>) : (<h2>Pakuj</h2>)}
         </ul>
         <button onClick={sendStats}>
             Trenuj
