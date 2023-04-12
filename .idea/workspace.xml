@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5bef8274-a0ed-4f9a-852c-019d8d1f1125" name="Changes" comment="Adding Add statistics module.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddStatistics/AddStatistics.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddStatistics/AddStatistics.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GetAllOpponents/GetAllOpponents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetAllOpponents/GetAllOpponents.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GetOneOpponent/GetOneOpponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetOneOpponent/GetOneOpponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GetOneUser/GetOneUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetOneUser/GetOneUser.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GetUserEq/GetUserEq.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetUserEq/GetUserEq.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignIn/SignIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignIn/SignIn.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUp/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SignUp/SignUp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/layout/SignInBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/SignInBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +98,10 @@
       <workItem from="1680885171370" duration="1953000" />
       <workItem from="1681158026695" duration="4533000" />
       <workItem from="1681246255253" duration="10212000" />
+      <workItem from="1681291150219" duration="710000" />
+      <workItem from="1681292679603" duration="116000" />
+      <workItem from="1681294193121" duration="211000" />
+      <workItem from="1681294971016" duration="929000" />
     </task>
     <task id="LOCAL-00001" summary="Adding Header and Navbar to the project.">
       <created>1678402900094</created>
@@ -208,7 +205,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

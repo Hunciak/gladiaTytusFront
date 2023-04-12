@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "types": [
+        "../gladia-tytus-back/types"
+      ]
+    }
+  }
+}

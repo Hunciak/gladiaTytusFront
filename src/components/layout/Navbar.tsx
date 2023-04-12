@@ -4,9 +4,7 @@ import "./Navbar.css";
 import {Header} from "./Header";
 import {SignIn} from "../SignIn/SignIn";
 import {SignUp} from "../SignUp/SignUp";
-import {GetOneUser} from "../GetOneUser/GetOneUser";
-import {GetAllOpponents} from "../GetAllOpponents/GetAllOpponents";
-import {SignInBar} from "./SignInBar";
+
 
 
 
