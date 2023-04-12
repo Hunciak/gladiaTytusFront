@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 App gif
-![]https://github.com/Hunciak/gladiaTytusFront/blob/develop/src/img/gif.gif
+![](https://github.com/Hunciak/gladiaTytusFront/blob/develop/src/img/gif.gif)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
