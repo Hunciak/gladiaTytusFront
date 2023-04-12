@@ -33,25 +33,25 @@ export const GetOneOpponent = (props: Props) => {
     })
     const [flagFight, setFlagFight] = useState(false)
 
-    useEffect( () => {
-      try {
-          (async () => {
-            const res = await fetch(`http://localhost:3001/app/opp/${props.opponentId}`)
-            const opponentStats = await res.json();
-              setStats(stats => ({
-                  ...stats,
-                  ...opponentStats,
-              }))
-              setPair(pair => ({
-                  ...pair,
-                  id: props.id,
-                  opponentId: props.opponentId,
-              }))
-          })()
+    useEffect(() => {
+        try {
+            (async () => {
+                const res = await fetch(`http://localhost:3001/app/opp/${props.opponentId}`)
+                const opponentStats = await res.json();
+                setStats(stats => ({
+                    ...stats,
+                    ...opponentStats,
+                }))
+                setPair(pair => ({
+                    ...pair,
+                    id: props.id,
+                    opponentId: props.opponentId,
+                }))
+            })()
         } catch (error) {
             console.log('coś poszło nieu tak w axios GetOneOpponent', error)
         }
-    },[]);
+    }, []);
 
     const fightResult = async (e: SyntheticEvent) => {
         e.preventDefault();
@@ -90,12 +90,14 @@ export const GetOneOpponent = (props: Props) => {
                 <li>Redukcja obrażeń: {stats.damageReduction}</li>
                 <li>Maksymalny hajs: {stats.maxGold}</li>
             </ul>
-            <button onClick={fightResult} >Walcz!</button>
+            <button onClick={fightResult}>Walcz!</button>
             {
-                flagFight ? (fightRes.win ? <p>Wygrałeś walkę!, otrzymujesz {fightRes.gold} PLN</p> : <p>Przegrałeś, nic nie dostajesz!</p>) : null
+                flagFight ? (fightRes.win ? <p>Wygrałeś walkę!, otrzymujesz {fightRes.gold} PLN</p> :
+                    <p>Przegrałeś, nic nie dostajesz!</p>) : null
             }
             {
-                flagFight ? (fightRes.userHp ? <p>Zostało ci {fightRes.userHp} HP</p> : <p>Przegrałeś i nie masz HP!</p>) : null
+                flagFight ? (fightRes.userHp ? <p>Zostało ci {fightRes.userHp} HP</p> :
+                    <p>Przegrałeś i nie masz HP!</p>) : null
             }
 
             {

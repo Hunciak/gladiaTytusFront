@@ -1,11 +1,9 @@
 import React from "react";
-import { NavLink, Route, Routes} from "react-router-dom";
+import {NavLink, Route, Routes} from "react-router-dom";
 import "./Navbar.css";
 import {Header} from "./Header";
 import {SignIn} from "../SignIn/SignIn";
 import {SignUp} from "../SignUp/SignUp";
-
-
 
 
 export const Navbar = () => {

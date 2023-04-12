@@ -6,7 +6,6 @@ import {GetUserEq} from "../GetUserEq/GetUserEq";
 import {AddStatistics} from "../AddStatistics/AddStatistics";
 
 
-
 interface Props {
     id: any;
 }
@@ -30,7 +29,7 @@ export const SignInBar = (props: Props) => {
             </ul>
         </div>
     )
-    return(
+    return (
         <h3>
             {signInBar}
             <Routes>

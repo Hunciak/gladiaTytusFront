@@ -1,22 +1,20 @@
 import React, {SyntheticEvent, useState} from "react";
-import { UserDataType } from "types";
+import {UserDataType} from "types";
 import {Btn} from "../common/Btn";
-
-
 
 
 export const SignUp = () => {
 
-        const [id, setId] = useState('');
-        const [loading, setLoading] = useState(false);
-        const [form, setForm] = useState<UserDataType>({
-            email: '',
-            name: '',
-            password: '',
-        });
-        const [repPass, setRepPass] = useState({
-            validPass: '',
-        });
+    const [id, setId] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [form, setForm] = useState<UserDataType>({
+        email: '',
+        name: '',
+        password: '',
+    });
+    const [repPass, setRepPass] = useState({
+        validPass: '',
+    });
 
 
     const saveUser = async (e: SyntheticEvent) => {
@@ -34,7 +32,7 @@ export const SignUp = () => {
             throw new Error('Hasła nie są takie same lub należy wypełnić powtórzenie hasła!');
         }
 
-        try{
+        try {
             const res = await fetch(`http://localhost:3001/signup`, {
                 method: 'POST',
                 headers: {
@@ -48,9 +46,8 @@ export const SignUp = () => {
             setId(data.id)
 
         } catch (error) {
-            console.log('jebany blad',error)
-        }
-        finally {
+            console.log('jebany blad', error)
+        } finally {
             setLoading(false);
         }
     }
@@ -76,59 +73,59 @@ export const SignUp = () => {
 
     return (
         <div>
-        <form className='sign-up' action='' onSubmit={saveUser}>
-            <h1>Zarejestruj się</h1>
-            <p>
-                <label>
-                    E-mail: <br/>
-                    <input
-                        type="text"
-                        name="email"
-                        required
-                        maxLength={30}
-                        value={form.email}
-                        onChange={e => updateForm('email', e.target.value)}/>
-                </label>
+            <form className='sign-up' action='' onSubmit={saveUser}>
+                <h1>Zarejestruj się</h1>
+                <p>
+                    <label>
+                        E-mail: <br/>
+                        <input
+                            type="text"
+                            name="email"
+                            required
+                            maxLength={30}
+                            value={form.email}
+                            onChange={e => updateForm('email', e.target.value)}/>
+                    </label>
 
-                <label>
-                    Nazwa postaci: <br/>
-                    <input
-                        type="text"
-                        name="name"
-                        required
-                        maxLength={30}
-                        value={form.name}
-                        onChange={e => updateForm('name', e.target.value)}/>
-                </label>
+                    <label>
+                        Nazwa postaci: <br/>
+                        <input
+                            type="text"
+                            name="name"
+                            required
+                            maxLength={30}
+                            value={form.name}
+                            onChange={e => updateForm('name', e.target.value)}/>
+                    </label>
 
-                <label>
-                    Hasło: <br/>
-                    <input
-                        type="password"
-                        name="password"
-                        required
-                        maxLength={30}
-                        value={form.password}
-                        onChange={e => updateForm('password', e.target.value)}
-                    />
-                </label>
+                    <label>
+                        Hasło: <br/>
+                        <input
+                            type="password"
+                            name="password"
+                            required
+                            maxLength={30}
+                            value={form.password}
+                            onChange={e => updateForm('password', e.target.value)}
+                        />
+                    </label>
 
-                <label>
-                    Powtórz hasło: <br/>
-                    <input
-                        type="password"
-                        name="repPass"
-                        required
-                        maxLength={30}
-                        value={repPass.validPass}
-                        onChange={e => updateForm('validPass', e.target.value)}
-                    />
-                </label>
+                    <label>
+                        Powtórz hasło: <br/>
+                        <input
+                            type="password"
+                            name="repPass"
+                            required
+                            maxLength={30}
+                            value={repPass.validPass}
+                            onChange={e => updateForm('validPass', e.target.value)}
+                        />
+                    </label>
 
-            </p>
-            <Btn text={'Zarejstruj'}/>
+                </p>
+                <Btn text={'Zarejstruj'}/>
 
-        </form>
+            </form>
 
         </div>
 

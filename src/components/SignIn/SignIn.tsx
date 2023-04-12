@@ -1,9 +1,7 @@
 import React, {SyntheticEvent, useState} from "react";
-import {UserDataType } from "types";
+import {UserDataType} from "types";
 import {Btn} from "../common/Btn";
 import {SignInBar} from "../layout/SignInBar";
-
-
 
 
 export const SignIn = () => {
@@ -20,7 +18,7 @@ export const SignIn = () => {
 
         setLoading(true);
 
-        try{
+        try {
             const res = await fetch(`http://localhost:3001/signin`, {
                 method: 'POST',
                 headers: {
@@ -32,9 +30,8 @@ export const SignIn = () => {
             setId(getId.signIn);
 
         } catch (error) {
-            console.log('Błąd podczas logowania',error)
-        }
-        finally {
+            console.log('Błąd podczas logowania', error)
+        } finally {
             setLoading(false);
         }
     };
@@ -54,16 +51,17 @@ export const SignIn = () => {
 
         return (
             <div>
-        <h2>Pomyślnie zalogowano.</h2>
+                <h2>Pomyślnie zalogowano.</h2>
                 <SignInBar id={id}/>
 
             </div>
-        )}
+        )
+    }
 
     return (
         <div>
-        <form className='sign-in' action="" onSubmit={signIn}>
-            <h1>Zaloguj się</h1>
+            <form className='sign-in' action="" onSubmit={signIn}>
+                <h1>Zaloguj się</h1>
                 <p>
                     <label>
                         E-mail: <br/>
@@ -91,7 +89,7 @@ export const SignIn = () => {
                 </p>
                 <Btn text={'Zaloguj się'}/>
 
-        </form>
+            </form>
 
         </div>
     )

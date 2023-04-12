@@ -1,6 +1,5 @@
 import React, {SyntheticEvent, useEffect, useState} from "react";
-import { AddStatsType, AddStatsValidationType } from "types";
-
+import {AddStatsType, AddStatsValidationType} from "types";
 
 
 export const AddStatistics = (props: string) => {
@@ -25,7 +24,7 @@ export const AddStatistics = (props: string) => {
     useEffect(() => {
         try {
             (async () => {
-                const res = await fetch (`http://localhost:3001/app/user/${props}`)
+                const res = await fetch(`http://localhost:3001/app/user/${props}`)
                 const userStats = await res.json();
                 setStats(stats => ({
                     ...stats,
@@ -36,7 +35,7 @@ export const AddStatistics = (props: string) => {
 
             console.log('błąd w pobieraniu danych użytkownika', error)
         }
-    },[]);
+    }, []);
 
     const sendStats = async (e: SyntheticEvent) => {
         e.preventDefault();
@@ -66,15 +65,15 @@ export const AddStatistics = (props: string) => {
     };
 
     const addStat = (key: string): void => {
-    if (stats.PLN > 3) {
-        setStats((stats: any) => ({
-            ...stats,
-            [key]: stats[key] + 1,
-            PLN: stats.PLN - 3,
-        }))
-    } else {
-        setNotEnoughGold(true);
-    }
+        if (stats.PLN > 3) {
+            setStats((stats: any) => ({
+                ...stats,
+                [key]: stats[key] + 1,
+                PLN: stats.PLN - 3,
+            }))
+        } else {
+            setNotEnoughGold(true);
+        }
     };
 
     return <div>

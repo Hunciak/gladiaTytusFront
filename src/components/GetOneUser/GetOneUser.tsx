@@ -1,7 +1,5 @@
-import { useEffect, useState} from "react";
-import { AddStatsType } from "types";
-
-
+import {useEffect, useState} from "react";
+import {AddStatsType} from "types";
 
 
 interface Props {
@@ -31,12 +29,12 @@ export const GetOneUser = (props: Props) => {
         try {
 
             (async () => {
-            const res = await fetch (`http://localhost:3001/app/user/${props}`)
-            const userStats = await res.json();
-            setStats(stats => ({
-                ...stats,
-                ...userStats,
-            }))
+                const res = await fetch(`http://localhost:3001/app/user/${props}`)
+                const userStats = await res.json();
+                setStats(stats => ({
+                    ...stats,
+                    ...userStats,
+                }))
             })()
 
         } catch (error) {
@@ -47,25 +45,25 @@ export const GetOneUser = (props: Props) => {
             setLoading(false)
 
         }
-    },[]);
+    }, []);
 
     return (
         <div>
 
             <h1>Twoje statystyki</h1>
-                    <ul>
-                        <li>Nazwa: {stats.name}</li>
-                        <li>Level: {stats.level}</li>
-                        <li>Doświadczenie: {stats.experience}</li>
-                        <li>HP: {stats.HP}</li>
-                        <li>Obrażenia: {stats.damage}</li>
-                        <li>Szansa na trafienie: {stats.chanceOnHit}</li>
-                        <li>Redukcja obrażeń: {stats.damageReduction}</li>
-                        <li>Siła: {stats.strength}</li>
-                        <li>Zręczność: {stats.dexterity}</li>
-                        <li>Charyzma: {stats.charisma}</li>
-                        <li>PLN: {stats.PLN}</li>
-                    </ul>
+            <ul>
+                <li>Nazwa: {stats.name}</li>
+                <li>Level: {stats.level}</li>
+                <li>Doświadczenie: {stats.experience}</li>
+                <li>HP: {stats.HP}</li>
+                <li>Obrażenia: {stats.damage}</li>
+                <li>Szansa na trafienie: {stats.chanceOnHit}</li>
+                <li>Redukcja obrażeń: {stats.damageReduction}</li>
+                <li>Siła: {stats.strength}</li>
+                <li>Zręczność: {stats.dexterity}</li>
+                <li>Charyzma: {stats.charisma}</li>
+                <li>PLN: {stats.PLN}</li>
+            </ul>
 
         </div>
     )

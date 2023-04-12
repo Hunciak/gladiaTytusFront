@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bef8274-a0ed-4f9a-852c-019d8d1f1125" name="Changes" comment="Adding Add statistics module.">
+    <list default="true" id="5bef8274-a0ed-4f9a-852c-019d8d1f1125" name="Changes" comment="Fixing merge problems...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/SignInBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/SignInBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +99,7 @@
       <workItem from="1681291150219" duration="710000" />
       <workItem from="1681292679603" duration="116000" />
       <workItem from="1681294193121" duration="211000" />
-      <workItem from="1681294971016" duration="929000" />
+      <workItem from="1681294971016" duration="2463000" />
     </task>
     <task id="LOCAL-00001" summary="Adding Header and Navbar to the project.">
       <created>1678402900094</created>
@@ -194,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680784630431</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fixing merge problems...">
+      <created>1681296166776</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681296166776</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +241,7 @@
     <MESSAGE value="Adding GetAllOpponents. configuring props in navbars." />
     <MESSAGE value="Adding SignInBar. Displaying navbar after log in." />
     <MESSAGE value="Adding Add statistics module." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Add statistics module." />
+    <MESSAGE value="Fixing merge problems..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing merge problems..." />
   </component>
 </project>

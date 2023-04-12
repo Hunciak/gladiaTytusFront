@@ -1,5 +1,5 @@
 import React, {SyntheticEvent, useEffect, useState} from "react";
-import { AllEquipment } from "types";
+import {AllEquipment} from "types";
 import {Btn} from "../common/Btn";
 
 
@@ -40,12 +40,12 @@ export const GetUserEq = (props: Props) => {
                 const usersEquipment = await res.json();
                 setEquipment(usersEquipment);
             })()
-        } catch(error) {
+        } catch (error) {
             console.log('błąd w pobieraniu ekwipunku', error)
         }
-    },[])
+    }, [])
 
-    const usersEquipment = async (e:SyntheticEvent) => {
+    const usersEquipment = async (e: SyntheticEvent) => {
         e.preventDefault();
 
         try {
@@ -71,129 +71,129 @@ export const GetUserEq = (props: Props) => {
 
     }
 
-    return  <div>
+    return <div>
         <h1>Twój ekwipunek</h1>
-            <form action="" onSubmit={usersEquipment} >
-                <ul>
-                    <li>Pancerz:
-                        <select  className='custom-select' value='armor' onChange={onChangeEq}>
-                            {
-                                equipment.filter((eq) => {
-                                    return eq.type === 'armor';
-                                })
-                                    .map(eq => (
+        <form action="" onSubmit={usersEquipment}>
+            <ul>
+                <li>Pancerz:
+                    <select className='custom-select' value='armor' onChange={onChangeEq}>
+                        {
+                            equipment.filter((eq) => {
+                                return eq.type === 'armor';
+                            })
+                                .map(eq => (
                                     <option key={eq.name} value={eq.name}>{eq.name}</option>
                                 ))
-                            }
+                        }
 
-                        </select>
-                    </li>
+                    </select>
+                </li>
 
-                    <li>Hełm:
-                        <select  className='custom-select' value='helmet' onChange={onChangeEq}>
-                            {
-                                equipment.filter((eq) => {
-                                    return eq.type === 'helmet';
-                                })
-                                    .map(eq => (
-                                        <option key={eq.name} value={eq.name}>{eq.name}</option>
-                                    ))
-                            }
-                        </select>
-                    </li>
+                <li>Hełm:
+                    <select className='custom-select' value='helmet' onChange={onChangeEq}>
+                        {
+                            equipment.filter((eq) => {
+                                return eq.type === 'helmet';
+                            })
+                                .map(eq => (
+                                    <option key={eq.name} value={eq.name}>{eq.name}</option>
+                                ))
+                        }
+                    </select>
+                </li>
 
-                    <li>Rękawice:
-                        <select className='custom-select' value='gloves' onChange={onChangeEq}>
-                            {
-                                equipment.filter((eq) => {
-                                    return eq.type === 'gloves';
-                                })
-                                    .map(eq => (
-                                        <option key={eq.name} value={eq.name}>{eq.name}</option>
-                                    ))
-                            }
-                        </select>
-                    </li>
+                <li>Rękawice:
+                    <select className='custom-select' value='gloves' onChange={onChangeEq}>
+                        {
+                            equipment.filter((eq) => {
+                                return eq.type === 'gloves';
+                            })
+                                .map(eq => (
+                                    <option key={eq.name} value={eq.name}>{eq.name}</option>
+                                ))
+                        }
+                    </select>
+                </li>
 
-                    <li>Buty:
-                        <select className='custom-select' value='shoes' onChange={onChangeEq}>
-                            {
-                                equipment.filter((eq) => {
-                                    return eq.type === 'shoes';
-                                })
-                                    .map(eq => (
-                                        <option key={eq.name} value={eq.name}>{eq.name}</option>
-                                    ))
-                            }
-                        </select>
-                    </li>
+                <li>Buty:
+                    <select className='custom-select' value='shoes' onChange={onChangeEq}>
+                        {
+                            equipment.filter((eq) => {
+                                return eq.type === 'shoes';
+                            })
+                                .map(eq => (
+                                    <option key={eq.name} value={eq.name}>{eq.name}</option>
+                                ))
+                        }
+                    </select>
+                </li>
 
-                    <li>Pierścień:
-                        <select className='custom-select' value='ring' onChange={onChangeEq}>
-                            {
-                                equipment.filter((eq) => {
-                                    return eq.type === 'ring';
-                                })
-                                    .map(eq => (
-                                        <option key={eq.name} value={eq.name}>{eq.name}</option>
-                                    ))
-                            }
-                        </select>
-                    </li>
+                <li>Pierścień:
+                    <select className='custom-select' value='ring' onChange={onChangeEq}>
+                        {
+                            equipment.filter((eq) => {
+                                return eq.type === 'ring';
+                            })
+                                .map(eq => (
+                                    <option key={eq.name} value={eq.name}>{eq.name}</option>
+                                ))
+                        }
+                    </select>
+                </li>
 
-                    <li>Naszyjnik:
-                        <select className='custom-select' value='necklace' onChange={onChangeEq}>
-                            {
-                                equipment.filter((eq) => {
-                                    return eq.type === 'necklace';
-                                })
-                                    .map(eq => (
-                                        <option key={eq.name} value={eq.name}>{eq.name}</option>
-                                    ))
-                            }
-                        </select>
-                    </li>
+                <li>Naszyjnik:
+                    <select className='custom-select' value='necklace' onChange={onChangeEq}>
+                        {
+                            equipment.filter((eq) => {
+                                return eq.type === 'necklace';
+                            })
+                                .map(eq => (
+                                    <option key={eq.name} value={eq.name}>{eq.name}</option>
+                                ))
+                        }
+                    </select>
+                </li>
 
-                    <li>Kolczyki:
-                        <select className='custom-select' value='earring' onChange={onChangeEq}>
-                            {
-                                equipment.filter((eq) => {
-                                    return eq.type === 'earring';
-                                })
-                                    .map(eq => (
-                                        <option key={eq.name} value={eq.name}>{eq.name}</option>
-                                    ))
-                            }
-                        </select>
-                    </li>
+                <li>Kolczyki:
+                    <select className='custom-select' value='earring' onChange={onChangeEq}>
+                        {
+                            equipment.filter((eq) => {
+                                return eq.type === 'earring';
+                            })
+                                .map(eq => (
+                                    <option key={eq.name} value={eq.name}>{eq.name}</option>
+                                ))
+                        }
+                    </select>
+                </li>
 
-                    <li>Broń:
-                        <select className='custom-select' value='weapon' onChange={onChangeEq}>
-                            {
-                                equipment.filter((eq) => {
-                                    return eq.type === 'weapon';
-                                })
-                                    .map(eq => (
-                                        <option key={eq.name} value={eq.name}>{eq.name}</option>
-                                    ))
-                            }
-                        </select>
-                    </li>
+                <li>Broń:
+                    <select className='custom-select' value='weapon' onChange={onChangeEq}>
+                        {
+                            equipment.filter((eq) => {
+                                return eq.type === 'weapon';
+                            })
+                                .map(eq => (
+                                    <option key={eq.name} value={eq.name}>{eq.name}</option>
+                                ))
+                        }
+                    </select>
+                </li>
 
-                    <li>Tarcza:
-                        <select className='custom-select' value='shield' onChange={onChangeEq}>
-                            {
-                                equipment.filter((eq) => {
-                                    return eq.type === 'shield';
-                                })
-                                    .map(eq => (
-                                        <option key={eq.name} value={eq.name}>{eq.name}</option>
-                                    ))
-                            }
-                        </select>
-                    </li>
-                </ul>
+                <li>Tarcza:
+                    <select className='custom-select' value='shield' onChange={onChangeEq}>
+                        {
+                            equipment.filter((eq) => {
+                                return eq.type === 'shield';
+                            })
+                                .map(eq => (
+                                    <option key={eq.name} value={eq.name}>{eq.name}</option>
+                                ))
+                        }
+                    </select>
+                </li>
+            </ul>
             <Btn text={'Zapisz ekwipunek'}/>
-            </form>
+        </form>
     </div>
 }

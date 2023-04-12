@@ -1,5 +1,5 @@
 import React, {SyntheticEvent, useEffect, useState} from "react";
-import { AllOppType, UserOppIdType } from "types";
+import {AllOppType, UserOppIdType} from "types";
 import {GetOneOpponent} from "../GetOneOpponent/GetOneOpponent";
 
 interface Props {
@@ -13,7 +13,7 @@ export const GetAllOpponents = (props: string) => {
         name: '',
         id: 0,
     });
-    const propOneOpp:UserOppIdType = {
+    const propOneOpp: UserOppIdType = {
         id: props,
         opponentId: chosenOpponent.id,
     }
@@ -26,8 +26,8 @@ export const GetAllOpponents = (props: string) => {
 
         try {
             (async () => {
-               const res = await fetch(`http://localhost:3001/app/allopp`);
-               const allOpp = await res.json();
+                const res = await fetch(`http://localhost:3001/app/allopp`);
+                const allOpp = await res.json();
                 setAllOpponents(allOpp);
             })()
 
@@ -36,11 +36,10 @@ export const GetAllOpponents = (props: string) => {
         }
     }, [])
 
-    const setFlag = (e:SyntheticEvent) => {
+    const setFlag = (e: SyntheticEvent) => {
         e.preventDefault()
         setGetOneFlag(true);
     }
-
 
 
     const onChangeOpp = (e: any): void => {
